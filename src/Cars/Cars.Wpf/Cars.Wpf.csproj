@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Cars</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cars.Core\Cars.Core.csproj" />
+    <ProjectReference Include="..\Modules\Cars.Modules.Search\Cars.Modules.Search.csproj" />
+    <ProjectReference Include="..\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\Cars.Services\Cars.Services.csproj" />
+  </ItemGroup>
+</Project>
