@@ -15,3 +15,5 @@ Notes on how this project is being built...
 # Architecture Notes
 
 - Create Prism modules SearchModule, ComparisonModule, FavouritesModule
+- Add Entities to core
+- Add Entity Framework to Services project
