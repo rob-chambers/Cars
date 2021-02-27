@@ -20,7 +20,7 @@ namespace Cars
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IMessageService, MessageService>();
+            containerRegistry.RegisterSingleton<System.Net.Http.HttpClient>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

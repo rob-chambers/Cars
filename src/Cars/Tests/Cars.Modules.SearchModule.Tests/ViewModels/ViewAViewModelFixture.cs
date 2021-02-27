@@ -1,22 +1,41 @@
-﻿using Cars.Modules.Search.ViewModels;
+﻿using Cars.Models;
+using Cars.Modules.Search.ViewModels;
 using Cars.Services.Interfaces;
 using Moq;
 using Prism.Regions;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Cars.Modules.Search.Tests.ViewModels
 {
     public class ViewAViewModelFixture
     {
-        private const string MessageServiceDefaultMessage = "Some Value";
-        private Mock<IMessageService> _messageServiceMock;
-        private Mock<IRegionManager> _regionManagerMock;        
+        private const string SmallCars = "Small Cars";
+        private const string FamilyCars = "Family Cars";
+
+        private Mock<ISearchService> _searchServiceMock;
+        private Mock<IRegionManager> _regionManagerMock;
 
         public ViewAViewModelFixture()
         {
-            var messageService = new Mock<IMessageService>();
-            messageService.Setup(x => x.GetMessage()).Returns(MessageServiceDefaultMessage);
-            _messageServiceMock = messageService;
+            var searchService = new Mock<ISearchService>();
+
+            ICollection<Category> categories = new List<Category>
+            {
+                new Category
+                {
+                    Name = SmallCars
+                },
+                new Category
+                {
+                    Name = FamilyCars
+                }
+            };
+
+            searchService.Setup(x => x.GetCategoriesAsync())
+                .Returns(Task.FromResult(categories));
+            _searchServiceMock = searchService;
 
             _regionManagerMock = new Mock<IRegionManager>();
         }
@@ -24,18 +43,11 @@ namespace Cars.Modules.Search.Tests.ViewModels
         [Fact]
         public void MessagePropertyValueUpdated()
         {
-            var vm = new ViewAViewModel(_regionManagerMock.Object, _messageServiceMock.Object);
+            var vm = new ViewAViewModel(_regionManagerMock.Object, _searchServiceMock.Object);
 
-            _messageServiceMock.Verify(x => x.GetMessage(), Times.Once);
+            _searchServiceMock.Verify(x => x.GetCategoriesAsync(), Times.Once);
 
-            Assert.Equal(MessageServiceDefaultMessage, vm.Message);
-        }
-
-        [Fact]
-        public void MessageINotifyPropertyChangedCalled()
-        {
-            var vm = new ViewAViewModel(_regionManagerMock.Object, _messageServiceMock.Object);
-            Assert.PropertyChanged(vm, nameof(vm.Message), () => vm.Message = "Changed");
+            Assert.Equal(SmallCars + "," + FamilyCars, vm.Message);
         }
     }
 }

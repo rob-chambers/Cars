@@ -5,10 +5,12 @@
     <AssemblyName>Cars.Modules.Search</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="DryIoc.dll" Version="4.7.4" />
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Cars.Core\Cars.Core.csproj" />
     <ProjectReference Include="..\..\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Services\Cars.Services\Cars.Services.csproj" />
   </ItemGroup>
 </Project>

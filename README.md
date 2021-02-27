@@ -10,6 +10,8 @@ Notes on how this project is being built...
 
 - Should have created a new Prism solution for using the Prism Full App (.NET Core) template from https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack
 - Used the DryIOC container
+- Added entities
+- Installed NSwagStudio
 
 
 # Architecture Notes
