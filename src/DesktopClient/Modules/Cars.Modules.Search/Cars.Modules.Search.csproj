@@ -9,8 +9,8 @@
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Cars.Core\Cars.Core.csproj" />
-    <ProjectReference Include="..\..\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj" />
-    <ProjectReference Include="..\..\Services\Cars.Services\Cars.Services.csproj" />
+    <ProjectReference Include="..\..\..\Common\Cars.Core\Cars.Core.csproj" />
+    <ProjectReference Include="..\..\..\Common\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\..\..\Common\Services\Cars.Services\Cars.Services.csproj" />
   </ItemGroup>
 </Project>

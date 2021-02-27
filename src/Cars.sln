@@ -9,23 +9,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{B041
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3410208F-FF77-4720-BC48-0FBC08C18AF1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Services", "Cars\Services\Cars.Services\Cars.Services.csproj", "{15505225-98BB-47DA-9497-EBD9AF8B65CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Services", "Common\Services\Cars.Services\Cars.Services.csproj", "{15505225-98BB-47DA-9497-EBD9AF8B65CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Services.Interfaces", "Cars\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj", "{3B8F853B-7E22-4353-9A0B-3E988D3936C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Services.Interfaces", "Common\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj", "{3B8F853B-7E22-4353-9A0B-3E988D3936C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Wpf", "Cars\Cars.Wpf\Cars.Wpf.csproj", "{6D4ACD2D-5F31-4682-B7EA-09845FF178FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Wpf", "DesktopClient\Cars.Wpf\Cars.Wpf.csproj", "{6D4ACD2D-5F31-4682-B7EA-09845FF178FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Core", "Cars\Cars.Core\Cars.Core.csproj", "{44452A3C-2086-45CE-86DC-E9ED632750BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Core", "Common\Cars.Core\Cars.Core.csproj", "{44452A3C-2086-45CE-86DC-E9ED632750BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Modules.Search", "Cars\Modules\Cars.Modules.Search\Cars.Modules.Search.csproj", "{CE285813-567F-448E-9E5A-BA16EDDE6092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Modules.Search", "DesktopClient\Modules\Cars.Modules.Search\Cars.Modules.Search.csproj", "{CE285813-567F-448E-9E5A-BA16EDDE6092}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Modules.Search.Tests", "Cars\Tests\Cars.Modules.SearchModule.Tests\Cars.Modules.Search.Tests.csproj", "{2A7442EC-9D06-4EAB-BEB6-8125D065B2E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Modules.Search.Tests", "Tests\Cars.Modules.SearchModule.Tests\Cars.Modules.Search.Tests.csproj", "{2A7442EC-9D06-4EAB-BEB6-8125D065B2E9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{DFC947C3-18B2-40FC-B4DF-BB4263607364}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{DFC947C3-18B2-40FC-B4DF-BB4263607364}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.WebApi", "Cars.WebApi\Cars.WebApi.csproj", "{3454B765-6178-4E0F-AD37-D45B89FC7D78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.WebApi", "Server\Cars.WebApi\Cars.WebApi.csproj", "{3454B765-6178-4E0F-AD37-D45B89FC7D78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Models", "Cars.Models\Cars.Models.csproj", "{20F0269F-B536-41C0-82DF-0AF168A12E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars.Models", "Common\Cars.Models\Cars.Models.csproj", "{20F0269F-B536-41C0-82DF-0AF168A12E61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesktopClient", "DesktopClient", "{45394CD1-5498-42F5-95A3-3CC28D4C7566}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{44924217-B900-4DD9-9600-4C03E8D78D3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,11 +74,15 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{B041E7AA-1F0C-4DD7-84A8-26EFC2EC0A42} = {45394CD1-5498-42F5-95A3-3CC28D4C7566}
 		{15505225-98BB-47DA-9497-EBD9AF8B65CF} = {3410208F-FF77-4720-BC48-0FBC08C18AF1}
 		{3B8F853B-7E22-4353-9A0B-3E988D3936C7} = {3410208F-FF77-4720-BC48-0FBC08C18AF1}
+		{6D4ACD2D-5F31-4682-B7EA-09845FF178FB} = {45394CD1-5498-42F5-95A3-3CC28D4C7566}
+		{44452A3C-2086-45CE-86DC-E9ED632750BB} = {44924217-B900-4DD9-9600-4C03E8D78D3C}
 		{CE285813-567F-448E-9E5A-BA16EDDE6092} = {B041E7AA-1F0C-4DD7-84A8-26EFC2EC0A42}
 		{2A7442EC-9D06-4EAB-BEB6-8125D065B2E9} = {21F63FEB-B30E-4B7B-925F-54E26B33453F}
 		{3454B765-6178-4E0F-AD37-D45B89FC7D78} = {DFC947C3-18B2-40FC-B4DF-BB4263607364}
+		{20F0269F-B536-41C0-82DF-0AF168A12E61} = {44924217-B900-4DD9-9600-4C03E8D78D3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {38BCE580-2CAC-4CFC-B55E-B873B296A744}

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cars\Cars.Core\Cars.Core.csproj" />
+    <ProjectReference Include="..\..\Common\Cars.Core\Cars.Core.csproj" />
   </ItemGroup>
 
 

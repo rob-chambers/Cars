@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Modules\Cars.Modules.Search\Cars.Modules.Search.csproj" />
-    <ProjectReference Include="..\..\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Common\Services\Cars.Services.Interfaces\Cars.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\..\DesktopClient\Modules\Cars.Modules.Search\Cars.Modules.Search.csproj" />
   </ItemGroup>
 
 </Project>
