@@ -18,9 +18,9 @@ namespace Cars.Modules.Search.Views
     /// <summary>
     /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class ViewA : UserControl
+    public partial class CategoriesView : UserControl
     {
-        public ViewA()
+        public CategoriesView()
         {
             InitializeComponent();
         }

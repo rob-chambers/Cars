@@ -18,13 +18,15 @@ namespace Cars.WebApi.Controllers
                 {
                     Id = 1,
                     Name = "Family Cars",
-                    Description = "Some spiel about family cars"
+                    Description = "Some spiel about family cars",
+                    ImageUrl = "https://localhost:44326/images/category-family.jpg"
                 },
                 new Category
                 {
                     Id = 2,
                     Name = "Luxury Cars",
-                    Description = "The most desirable car"
+                    Description = "The most desirable car",
+                    ImageUrl = "https://localhost:44326/images/category-luxury.jpg"
                 }
             };
         }

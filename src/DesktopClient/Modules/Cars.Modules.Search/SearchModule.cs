@@ -23,12 +23,12 @@ namespace Cars.Modules.Search
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegion, "ViewA");
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, "CategoriesView");
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA>();
+            containerRegistry.RegisterForNavigation<CategoriesView>();
             containerRegistry.RegisterInstance<ISearchService>(new SearchService("https://localhost:44326", _httpClient));
         }
      }
