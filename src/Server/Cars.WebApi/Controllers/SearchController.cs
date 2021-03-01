@@ -10,7 +10,7 @@ namespace Cars.WebApi.Controllers
     public class SearchController : ControllerBase
     {
         [Route("getcategories")]
-        public async Task<IEnumerable<Category>> GetCategoriesAsync()
+        public IEnumerable<Category> GetCategories()
         {
             return new List<Category>
             {
@@ -30,7 +30,7 @@ namespace Cars.WebApi.Controllers
         }
 
         [Route("getpopularcars")]
-        public async Task<IEnumerable<Vehicle>> GetPopularCarsAsync()
+        public IEnumerable<Vehicle> GetPopularCars()
         {
             return new Vehicle[]
             {

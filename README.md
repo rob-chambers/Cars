@@ -12,6 +12,9 @@ Notes on how this project is being built...
 - Used the DryIOC container
 - Added entities
 - Installed NSwagStudio
+- Created ASP.NET Core project
+- Generate C# client through NSwagStudio, gnerating output only (not to file)
+- Copy parts of generated code to different projects (Models, Interfaces)
 
 
 # Architecture Notes
