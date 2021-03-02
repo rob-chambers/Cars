@@ -1,52 +1,64 @@
-﻿<UserControl x:Class="Cars.Modules.Search.Views.CategoriesView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vms="clr-namespace:Cars.Modules.Search.ViewModels"
-             xmlns:models="clr-namespace:Cars.Models;assembly=Cars.Models"
-             mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="800"
-             d:Background="White"
-             xmlns:prism="http://prismlibrary.com/" 
-             prism:ViewModelLocator.AutoWireViewModel="True" >
+﻿<UserControl
+    x:Class="Cars.Modules.Search.Views.CategoriesView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Cars.Models;assembly=Cars.Models"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vms="clr-namespace:Cars.Modules.Search.ViewModels"
+    d:Background="White"
+    d:DesignHeight="400"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
     <UserControl.Resources>
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="24" />
         </Style>
     </UserControl.Resources>
     <Grid>
-            <ItemsControl ItemsSource="{Binding Categories}" >
-                <d:ItemsControl.ItemsSource>
-                    <x:Array Type="{x:Type models:Category}">
-                        <models:Category Name="Luxury Cars" />
-                        <models:Category Name="Family Cars" />
-                    </x:Array>
-                </d:ItemsControl.ItemsSource>
+        <ItemsControl ItemsSource="{Binding Categories}">
+            <d:ItemsControl.ItemsSource>
+                <x:Array Type="{x:Type models:Category}">
+                    <models:Category Name="Luxury Cars" />
+                    <models:Category Name="Family Cars" />
+                </x:Array>
+            </d:ItemsControl.ItemsSource>
 
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Margin="30">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="30">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                            <Image 
+
+                        <Button
+                            Command="{Binding DataContext.SearchByCategoryCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            CommandParameter="{Binding}">
+                            <Image
+                                Width="200"
+                                Height="200"
                                 Source="{Binding ImageUrl}"
-                                Width="200" Height="200" Stretch="Uniform"
-                            />
-                        <Label Grid.Row="1" Margin="10,5" Content="{Binding Name}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center" />
-                        </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                                Stretch="Uniform" />
+                        </Button>
+
+                        <Label
+                            Grid.Row="1"
+                            Margin="10,5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>

@@ -1,0 +1,13 @@
+﻿<UserControl
+    x:Class="Cars.Modules.Search.Views.MainSearchView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:core="clr-namespace:Cars.Core;assembly=Cars.Core"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:views="clr-namespace:Cars.Modules.Search.Views"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <StackPanel>
+        <views:CategoriesView Margin="20" />
+        <views:PopularCarsView Margin="20" />
+    </StackPanel>
+</UserControl>

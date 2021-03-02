@@ -23,12 +23,21 @@ namespace Cars.Modules.Search
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegion, "CategoriesView");
+            var regionManager = containerProvider.Resolve<IRegionManager>();
+            regionManager.RegisterViewWithRegion(RegionNames.SearchRegion, typeof(MainSearchView));
+            regionManager.RegisterViewWithRegion(RegionNames.SearchRegion, typeof(PopularCarsView));
+            regionManager.RegisterViewWithRegion(RegionNames.SearchRegion, typeof(CategoriesView));
+            regionManager.RegisterViewWithRegion(RegionNames.SearchRegion, typeof(SearchResultsView));
+            
+            _regionManager.RequestNavigate(RegionNames.SearchRegion, "MainSearchView");
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<PopularCarsView>();
             containerRegistry.RegisterForNavigation<CategoriesView>();
+            containerRegistry.RegisterForNavigation<SearchResultsView>();
+
             containerRegistry.RegisterInstance<ISearchService>(new SearchService("https://localhost:44326", _httpClient));
         }
      }
