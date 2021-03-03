@@ -15,6 +15,7 @@ Notes on how this project is being built...
 - Created ASP.NET Core project
 - Generate C# client through NSwagStudio, gnerating output only (not to file)
 - Copy parts of generated code to different projects (Models, Interfaces)
+- Build views and navigation
 
 
 # Architecture Notes

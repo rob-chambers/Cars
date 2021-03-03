@@ -41,15 +41,7 @@ namespace Cars.Modules.Search.ViewModels
                 { "category", category }
             };
 
-            _regionManager.RequestNavigate(RegionNames.SearchRegion, "SearchResultsView", NavigationCompleted, navigationParameters);
-        }
-
-        private void NavigationCompleted(NavigationResult result)
-        {
-            if (!result.Result.GetValueOrDefault())
-            {
-                
-            }
+            _regionManager.RequestNavigate(RegionNames.SearchRegion, "SearchResultsView", navigationParameters);
         }
     }
 }

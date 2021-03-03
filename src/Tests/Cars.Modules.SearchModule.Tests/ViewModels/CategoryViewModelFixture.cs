@@ -1,4 +1,5 @@
-﻿using Cars.Models;
+﻿using Cars.Core;
+using Cars.Models;
 using Cars.Modules.Search.ViewModels;
 using Cars.Services.Interfaces;
 using Moq;
@@ -50,6 +51,18 @@ namespace Cars.Modules.Search.Tests.ViewModels
 
             Assert.True(vm.Categories.Single(x => x.Name == SmallCars) != null);
             Assert.True(vm.Categories.Single(x => x.Name == FamilyCars) != null);
+        }
+
+        [Fact]
+        public void SearchByCategoryNavigatesToSearchResults()
+        {
+            var vm = new CategoriesViewModel(_regionManagerMock.Object, _searchServiceMock.Object);
+
+            var category = vm.Categories[0];
+            vm.SearchByCategoryCommand.Execute(category);
+
+            _regionManagerMock.Verify(x => x.RequestNavigate(RegionNames.SearchRegion, "SearchResultsView", 
+                It.Is<NavigationParameters>(parm => parm["category"] == category)));
         }
     }
 }
