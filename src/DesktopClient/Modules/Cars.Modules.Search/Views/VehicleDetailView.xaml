@@ -1,9 +1,10 @@
-﻿<UserControl x:Class="Cars.Modules.Search.Views.VehicleDetail"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"          
-             xmlns:vms="clr-namespace:Cars.Modules.Search.ViewModels"
-             prism:ViewModelLocator.AutoWireViewModel="True">
+﻿<UserControl
+    x:Class="Cars.Modules.Search.Views.VehicleDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vms="clr-namespace:Cars.Modules.Search.ViewModels"
+    prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -12,6 +13,6 @@
         <TextBlock Text="Vehicle Detail" />
 
         <TextBlock Text="{Binding SelectedVehicle.Name}" />
-        
+
     </Grid>
 </UserControl>

@@ -1,6 +1,4 @@
 ﻿using Cars.Modules.Search;
-using Cars.Services;
-using Cars.Services.Interfaces;
 using Cars.Views;
 using Prism.Ioc;
 using Prism.Modularity;

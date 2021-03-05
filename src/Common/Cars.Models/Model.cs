@@ -8,6 +8,7 @@
         private string _name;
         private Category _category;
         private Warranty _warranty;
+        private decimal _minPrice;
 
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Id
@@ -43,5 +44,13 @@
             get { return _warranty; }
             set { SetProperty(ref _warranty, value); }
         }
+
+        [Newtonsoft.Json.JsonProperty("minPrice", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public decimal MinPrice
+        {
+            get { return _minPrice; }
+            set { SetProperty(ref _minPrice, value); }
+        }
+
     }
 }

@@ -13,11 +13,11 @@ namespace Cars.Services.Interfaces
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Category>> GetCategoriesAsync(System.Threading.CancellationToken cancellationToken);
 
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Vehicle>> GetPopularCarsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Model>> GetPopularCarsAsync();
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Vehicle>> GetPopularCarsAsync(System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Model>> GetPopularCarsAsync(System.Threading.CancellationToken cancellationToken);
 
     }
 }

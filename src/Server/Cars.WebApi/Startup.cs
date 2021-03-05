@@ -1,17 +1,9 @@
+using Cars.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cars.WebApi
 {
@@ -27,6 +19,8 @@ namespace Cars.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddInfrastructure(Configuration);
+
             services.AddControllers();
 
             services.AddMvc();
@@ -34,6 +28,7 @@ namespace Cars.WebApi
             // Add OpenAPI/Swagger document
             services.AddOpenApiDocument(); // registers a OpenAPI v3.0 document with the name "v1" (default)
                                            // services.AddSwaggerDocument(); // registers a Swagger v2.0 document with the name "v1" (default)
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

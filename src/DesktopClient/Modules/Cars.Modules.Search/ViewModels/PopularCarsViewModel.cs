@@ -22,10 +22,10 @@ namespace Cars.Modules.Search.ViewModels
 
         private void LoadPopularCars()
         {
-            var cars = _searchService.GetPopularCarsAsync().Result;
-            Cars = new ObservableCollection<Vehicle>(cars);
+            var models = _searchService.GetPopularCarsAsync().Result;
+            Models = new ObservableCollection<Model>(models);
         }
 
-        public ObservableCollection<Vehicle> Cars { get; private set; }
+        public ObservableCollection<Model> Models { get; private set; }
     }
 }

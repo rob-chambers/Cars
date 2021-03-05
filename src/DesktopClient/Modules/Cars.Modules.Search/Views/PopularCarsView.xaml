@@ -9,6 +9,7 @@
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vms="clr-namespace:Cars.Modules.Search.ViewModels"
     d:Background="White"
+    d:DataContext="{d:DesignInstance vms:PopularCarsViewModel}"
     d:DesignHeight="200"
     d:DesignWidth="700"
     prism:ViewModelLocator.AutoWireViewModel="True"
@@ -30,12 +31,12 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <ItemsControl ItemsSource="{Binding Cars}">
+        <ItemsControl ItemsSource="{Binding Models}">
             <d:ItemsControl.ItemsSource>
-                <x:Array Type="{x:Type models:Vehicle}">
-                    <models:Vehicle Name="Volkswagen Polo" Price="22100" />
+                <x:Array Type="{x:Type models:Model}">
+                    <models:Model Name="Volkswagen Polo" MinPrice="22100" />
 
-                    <models:Vehicle Name="Toyota Prius" Price="16200" />
+                    <models:Model Name="Toyota Prius" MinPrice="16200" />
                 </x:Array>
             </d:ItemsControl.ItemsSource>
 
@@ -76,7 +77,7 @@
                         <Label
                             Grid.Row="4"
                             Margin="10,5"
-                            Content="{Binding Price, StringFormat=c}"
+                            Content="{Binding Path=MinPrice}"
                             Style="{StaticResource PriceStyle}" />
                     </Grid>
                 </DataTemplate>

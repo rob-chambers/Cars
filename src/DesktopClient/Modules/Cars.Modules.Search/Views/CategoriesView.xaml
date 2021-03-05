@@ -40,9 +40,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <Button
-                            Command="{Binding DataContext.SearchByCategoryCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                            CommandParameter="{Binding}">
+                        <Button Command="{Binding DataContext.SearchByCategoryCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}">
                             <Image
                                 Width="200"
                                 Height="200"

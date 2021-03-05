@@ -32,77 +32,107 @@ namespace Cars.WebApi.Controllers
         }
 
         [Route("getpopularcars")]
-        public IEnumerable<Vehicle> GetPopularCars()
+        public IEnumerable<Model> GetPopularCars()
         {
-            return new Vehicle[]
+            return new Model[]
             {
-                new Vehicle
+                new Model
                 {
-                    Name = "CR-V Sport",
-                    Doors = 4,
-                    EngineSize = 2.5f,
-                    FuelTankCapacity = 50,
-                    HorsePower = 120,
-                    Model = new Model
+                    Category = new Category
                     {
-                        Name = "CR-V",
-                        Category = new Category
-                        {
-                            Id = 2,
-                            Name = "SUV",
-                        },
-                        Id = 98,
-                        Make = new Make
-                        {
-                            Id = 2,
-                            Name = "Honda",
-                            Country = "Japan"
-                        },
-                        Warranty = new Warranty
-                        {
-                            Mileage = 100000,
-                             Id = 2,
-                             Years = 3
-                        }
+                        Name = "Small cars"
                     },
-                    MPG = 28,
-                    Price = 27700,
-                    Year = 2019
+                    Make = new Make
+                    {
+                        Name = "Volkswagen",
+                        Country = "Germany"
+                    },
+                    Name = "Golf"
                 },
-                new Vehicle
+                new Model
                 {
-                    Name = "325i 2dr Covertible",
-                    Doors = 2,
-                    EngineSize = 3.0f,
-                    FuelTankCapacity = 60,
-                    HorsePower = 180,
-                    Model = new Model
+                    Category = new Category
                     {
-                        Name = "3 Series",
-                        Category = new Category
-                        {
-                            Id = 6,
-                            Name = "Luxury Sedans",
-                        },
-                        Id = 103,
-                        Make = new Make
-                        {
-                            Id = 1,
-                            Name = "BMW",
-                            Country = "Germany"
-                        },
-                        Warranty = new Warranty
-                        {
-                            Mileage = 60000,
-                             Id = 3,
-                             Years = 3
-                        }
+                        Name = "Sports cars"
                     },
-                    MPG = 31,
-                    Price = 35700,
-                    Year = 2018
+                    Make = new Make
+                    {
+                        Name = "Ferrari",
+                        Country = "Italy"
+                    },
+                    Name = "812 GTS"                    
                 }
             };
+
+            //return new Vehicle[]
+            //{
+            //    new Vehicle
+            //    {
+            //        Name = "CR-V Sport",
+            //        Doors = 4,
+            //        EngineSize = 2.5f,
+            //        FuelTankCapacity = 50,
+            //        HorsePower = 120,
+            //        Model = new Model
+            //        {
+            //            Name = "CR-V",
+            //            Category = new Category
+            //            {
+            //                Id = 2,
+            //                Name = "SUV",
+            //            },
+            //            Id = 98,
+            //            Make = new Make
+            //            {
+            //                Id = 2,
+            //                Name = "Honda",
+            //                Country = "Japan"
+            //            },
+            //            Warranty = new Warranty
+            //            {
+            //                Mileage = 100000,
+            //                 Id = 2,
+            //                 Years = 3
+            //            }
+            //        },
+            //        MPG = 28,
+            //        Price = 27700,
+            //        Year = 2019
+            //    },
+            //    new Vehicle
+            //    {
+            //        Name = "325i 2dr Covertible",
+            //        Doors = 2,
+            //        EngineSize = 3.0f,
+            //        FuelTankCapacity = 60,
+            //        HorsePower = 180,
+            //        Model = new Model
+            //        {
+            //            Name = "3 Series",
+            //            Category = new Category
+            //            {
+            //                Id = 6,
+            //                Name = "Luxury Sedans",
+            //            },
+            //            Id = 103,
+            //            Make = new Make
+            //            {
+            //                Id = 1,
+            //                Name = "BMW",
+            //                Country = "Germany"
+            //            },
+            //            Warranty = new Warranty
+            //            {
+            //                Mileage = 60000,
+            //                 Id = 3,
+            //                 Years = 3
+            //            }
+            //        },
+            //        MPG = 31,
+            //        Price = 35700,
+            //        Year = 2018
+            //    }
+            //};
         }
     }
 }

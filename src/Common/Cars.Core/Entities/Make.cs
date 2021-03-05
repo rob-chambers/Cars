@@ -1,4 +1,6 @@
-﻿namespace Cars.Core.Entities
+﻿using System.Collections.Generic;
+
+namespace Cars.Core.Entities
 {
     public class Make
     {
@@ -7,5 +9,7 @@
         public string Name { get; set; }
 
         public string Country { get; set; }
+
+        public ICollection<Model> Models { get; set; }
     }
 }

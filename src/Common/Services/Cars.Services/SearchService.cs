@@ -128,14 +128,14 @@ namespace Cars.Services
         }
 
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Vehicle>> GetPopularCarsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Model>> GetPopularCarsAsync()
         {
             return GetPopularCarsAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Vehicle>> GetPopularCarsAsync(System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<Model>> GetPopularCarsAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Search/getpopularcars");
@@ -172,7 +172,7 @@ namespace Cars.Services
                         var status_ = (int)response_.StatusCode;
                         if (status_ == 200)
                         {
-                            var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Vehicle>>(response_, headers_).ConfigureAwait(false);
+                            var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<Model>>(response_, headers_).ConfigureAwait(false);
                             if (objectResponse_.Object == null)
                             {
                                 throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
@@ -302,7 +302,6 @@ namespace Cars.Services
         }
     }
 
-
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.10.6.0 (NJsonSchema v10.3.8.0 (Newtonsoft.Json v12.0.0.0))")]
     public partial class ApiException : System.Exception
     {
@@ -337,7 +336,6 @@ namespace Cars.Services
             Result = result;
         }
     }
-
 }
 
 #pragma warning restore 1591
