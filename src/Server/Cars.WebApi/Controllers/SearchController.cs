@@ -1,6 +1,9 @@
 ﻿using Cars.Core.Entities;
+using Cars.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cars.WebApi.Controllers
@@ -9,26 +12,36 @@ namespace Cars.WebApi.Controllers
     [ApiController]
     public class SearchController : ControllerBase
     {
-        [Route("getcategories")]
-        public IEnumerable<Category> GetCategories()
+        private readonly IApplicationDbContext _context;
+
+        public SearchController(IApplicationDbContext context)
         {
-            return new List<Category>
-            {
-                new Category
-                {
-                    Id = 1,
-                    Name = "Family Cars",
-                    Description = "Some spiel about family cars",
-                    ImageUrl = "https://localhost:44326/images/category-family.jpg"
-                },
-                new Category
-                {
-                    Id = 2,
-                    Name = "Luxury Cars",
-                    Description = "The most desirable car",
-                    ImageUrl = "https://localhost:44326/images/category-luxury.jpg"
-                }
-            };
+            _context = context;
+        }
+
+        [Route("getcategories")]
+        public async Task<IEnumerable<Category>> GetCategoriesAsync()
+        {
+            return await _context.Categories.ToListAsync();
+
+
+            //return new List<Category>
+            //{
+            //    new Category
+            //    {
+            //        Id = 1,
+            //        Name = "Family Cars",
+            //        Description = "Some spiel about family cars",
+            //        ImageUrl = "https://localhost:44326/images/category-family.jpg"
+            //    },
+            //    new Category
+            //    {
+            //        Id = 2,
+            //        Name = "Luxury Cars",
+            //        Description = "The most desirable car",
+            //        ImageUrl = "https://localhost:44326/images/category-luxury.jpg"
+            //    }
+            //};
         }
 
         [Route("getpopularcars")]

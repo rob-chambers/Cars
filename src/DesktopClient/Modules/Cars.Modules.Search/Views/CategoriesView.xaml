@@ -18,21 +18,21 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <ItemsControl ItemsSource="{Binding Categories}">
-            <d:ItemsControl.ItemsSource>
+        <ListView ItemsSource="{Binding Categories}">
+            <d:ListView.ItemsSource>
                 <x:Array Type="{x:Type models:Category}">
                     <models:Category Name="Luxury Cars" />
                     <models:Category Name="Family Cars" />
                 </x:Array>
-            </d:ItemsControl.ItemsSource>
+            </d:ListView.ItemsSource>
 
-            <ItemsControl.ItemsPanel>
+            <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel />
                 </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+            </ListView.ItemsPanel>
 
-            <ItemsControl.ItemTemplate>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="30">
                         <Grid.RowDefinitions>
@@ -42,8 +42,8 @@
 
                         <Button Command="{Binding DataContext.SearchByCategoryCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}">
                             <Image
-                                Width="200"
-                                Height="200"
+                                Width="250"
+                                Height="140"
                                 Source="{Binding ImageUrl}"
                                 Stretch="Uniform" />
                         </Button>
@@ -56,7 +56,7 @@
                             Content="{Binding Name}" />
                     </Grid>
                 </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

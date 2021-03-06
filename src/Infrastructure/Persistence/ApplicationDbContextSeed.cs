@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Cars.Core.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -126,15 +127,26 @@ namespace Cars.Infrastructure.Persistence
         {
             var categories = new Faker<Category>();
 
-            var names = new[] { "Luxury Cars", "Small Cars", "Family Cars", "Large SUVs", "Compact SUVs", "Coupés", "Sports Cars", "Executive Cars" };
-            categories.RuleFor(x => x.Name, x => names[x.IndexFaker]);
-            categories.RuleFor(x => x.Description, x => x.Lorem.Paragraph());
+            var baseUrl = "https://localhost:44326/images/";
 
-            var list = categories.Generate(names.Length);
-            foreach (var item in list)
+            var namesAndImages = new Dictionary<string, string>
             {
-                context.Categories.Add(item);
-            }
+                { "Luxury Cars", baseUrl + "category-luxury.jpg" },
+                { "Small Cars", baseUrl + "category-small.jpg" },
+                { "Family Cars", baseUrl + "category-family.jpg" },
+                { "Large SUVs", baseUrl + "category-large-suv.jpg" },
+                { "Compact SUVs", baseUrl + "category-small-suv.jpg" },
+                { "Coupés", baseUrl + "category-coupe.PNG" },
+                { "Sports Cars", baseUrl + "category-sports.PNG" },
+                { "Executive Cars", baseUrl + "category-executive.jpg" }
+            };
+
+            categories.RuleFor(x => x.Name, x => namesAndImages.ElementAt(x.IndexFaker).Key);
+            categories.RuleFor(x => x.Description, x => x.Lorem.Paragraph());
+            categories.RuleFor(x => x.ImageUrl, x => namesAndImages.ElementAt(x.IndexFaker).Value);
+
+            var list = categories.Generate(namesAndImages.Count);
+            context.Categories.AddRange(list);
 
             await context.SaveChangesAsync();
         }

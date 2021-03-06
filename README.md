@@ -16,6 +16,9 @@ Notes on how this project is being built...
 - Generate C# client through NSwagStudio, gnerating output only (not to file)
 - Copy parts of generated code to different projects (Models, Interfaces)
 - Build views and navigation
+- Installed EF Core and EF Core SQL Server and added application db context with model configuration
+- Added migrations and generated database
+- Seed database with dummy data using Bogus
 
 
 # Architecture Notes
